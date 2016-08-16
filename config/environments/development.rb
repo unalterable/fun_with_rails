@@ -55,11 +55,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-     address:              'nexgen.simplyms.com',
+     address:             Figaro.env.cacin_smtp_address,
      port:                 587,
      domain:               'cacin',
-     user_name:            ENV['cacin_email'],
-     password:             ENV['cacin_password'],
+     user_name:            Figaro.env.cacin_email,
+     password:             Figaro.env.cacin_password,
      authentication:       'plain',
      enable_starttls_auto: true
   }
